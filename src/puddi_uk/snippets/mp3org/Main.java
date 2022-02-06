@@ -30,11 +30,11 @@ public class Main {
 	}
 
 
-	private static void organize(File fromFile, File toDir) {
+	private static void organize(File fromDir, File toDir) {
 		Pattern filenamePattern = Pattern.compile("(.+) - .+\\.mp3");
 
 		// Iterate over all of the files, check if they're Mp3s, and if so, sort them.
-		for (File from : fromFile.listFiles()) {
+		for (File from : fromDir.listFiles()) {
 
 			// Ignore null files, somehow non-existent files, and directories.
 			if (from == null || !from.exists() || from.isDirectory()) {
